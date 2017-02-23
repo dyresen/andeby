@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: familie-ingress
+spec:
+  rules:
+  - host: andeby.rocks
+    http:
+      paths:
+      - path: /donald
+        backend:
+          serviceName: donald-svc
+          servicePort: 5000
+      - path: /ole
+        backend:
+          serviceName: ole-svc
+          servicePort: 5001

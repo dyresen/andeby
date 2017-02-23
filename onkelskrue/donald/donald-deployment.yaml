@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: donald-rc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: donald
+    spec:
+      containers:
+      - name: donald
+        image: onkelskrue/donald:v9
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+

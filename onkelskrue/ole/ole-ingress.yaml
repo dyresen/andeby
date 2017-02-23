@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ole-ingress
+spec:
+  rules:
+  - host: ole.andeby.rocks
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ole-svc
+          servicePort: 5001

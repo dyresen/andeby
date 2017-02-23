@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dole-ingress
+spec:
+  rules:
+  - host: dole.andeby.rocks
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: dole-svc
+          servicePort: 5002

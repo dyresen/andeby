@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: donald-ingress
+spec:
+  rules:
+  - host: donald.andeby.rocks
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: donald-svc
+          servicePort: 5000

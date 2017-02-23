@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: doffen-ingress
+spec:
+  rules:
+  - host: doffen.andeby.rocks
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: doffen-svc
+          servicePort: 5003

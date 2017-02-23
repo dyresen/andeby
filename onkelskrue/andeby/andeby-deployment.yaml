@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: andeby-rc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: andeby
+    spec:
+      containers:
+      - name: andeby
+        image: onkelskrue/andeby:v1
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+

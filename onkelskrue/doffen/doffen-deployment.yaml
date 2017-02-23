@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: doffen-rc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: doffen
+    spec:
+      containers:
+      - name: doffen
+        image: onkelskrue/doffen:v1
+        ports:
+        - containerPort: 5003
+        imagePullPolicy: Always
+
